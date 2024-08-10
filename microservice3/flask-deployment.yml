@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice3
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ms3
+  template:
+    metadata:
+      labels:
+        app: ms3
+    spec:
+      containers:
+      - name: ms3
+        image: kubeaziz/ms3:v1    
+        ports:
+        - containerPort: 3002
